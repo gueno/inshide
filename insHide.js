@@ -8,6 +8,7 @@
     var pluginName = 'inshide',
         defaults   = {
             minimum  : 100,
+            reset    : false,
             classhin : 'in',
             classhout: 'out'
         };
@@ -17,6 +18,11 @@
         inshide: function(options) {
                  
             var options =  $.extend(defaults, options);
+            
+            if (options.reset) {
+              options.reset = false;
+              return $('*',this).removeClass(options.classhin + ' ' + options.classhout);
+            }
  
             return this.each(function() {
                    
