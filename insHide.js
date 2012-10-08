@@ -10,7 +10,8 @@
             minimum  : 100,
             reset    : false,
             classhin : 'in',
-            classhout: 'out'
+            classhout: 'out',
+            classlast: 'lastin'
         };
 
     $.fn.extend({
@@ -18,7 +19,7 @@
         inshide: function(options) {
                  
             var options = $.extend(defaults, options),
-                  i = j = 0,
+                  nbIn = nbOut = 0,
                    mini = ( options.minimum / 100 ) || 1,
                    that = $(this),
                       p = that.parent(),
@@ -27,12 +28,16 @@
                       o = p.offset(),
                    left = o.left,
                     top = o.top,
-                    ret = [];
+                    ret = [],
+                 passed = firstOutHidden = false,
+                 lastIn = -1;
             
             if (options.reset) {
                 options.reset = false;
-                return $('*',this).removeClass(options.classhin + ' ' + options.classhout);
+                return that.children().removeClass(options.classhin + ' ' + options.classhout + ' ' + options.classlast);
             }
+            
+            that.children().removeClass(options.classhin + ' ' + options.classhout + ' ' + options.classlast);
  
             this.each(function() {
                         
@@ -55,18 +60,25 @@
                     );
 
                     if(res) {
-                        c.removeClass(options.classhout).addClass(options.classhin);
-                        i++;
+                        c.addClass(options.classhin);
+                        lastIn = that.children().index(c);
+                        nbIn++;
+                        passed = true;
                     }
                     else {
-                        j++;
-                        c.removeClass(options.classhin).addClass(options.classhout);
+                        c.addClass(options.classhout);
+                        nbOut++;
+                        if(!firstOutHidden && passed && offset.top > (top + height) && (offset.top  + ( eh * mini )) < (top + height + eh)) {
+                            firstOutHidden = true;
+                        }
                     }
                 });
              
             });
             
-            return [i,j];
+            if(firstOutHidden) that.children().eq(lastIn).addClass(options.classlast);
+            
+            return [nbIn, nbOut, lastIn, firstOutHidden];
             
         }
         
