@@ -17,14 +17,15 @@
          
         inshide: function(options) {
                  
-            var options =  $.extend(defaults, options);
+            var options = $.extend(defaults, options),
+                      i = 0;
             
             if (options.reset) {
               options.reset = false;
               return $('*',this).removeClass(options.classhin + ' ' + options.classhout);
             }
  
-            return this.each(function() {
+            this.each(function() {
                    
                 var mini = ( options.minimum / 100 ) || 1,
                        that = $(this),
@@ -37,6 +38,7 @@
                         ret = [];
                         
                 that.children().each(function() {
+                    
                     var c = $(this);
                     
                     if(this == document.documentElement)
@@ -53,13 +55,17 @@
                         || ( offset.left +   ew - ( ew * mini )  < left )
                     );
 
-                    if(res)
+                    if(res) {
                         c.removeClass(options.classhout).addClass(options.classhin);
+                        i++;
+                    }
                     else
                         c.removeClass(options.classhin).addClass(options.classhout);
                 });
              
             });
+            
+            return i;
             
         }
         
