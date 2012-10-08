@@ -18,24 +18,23 @@
         inshide: function(options) {
                  
             var options = $.extend(defaults, options),
-                      i = 0;
+                  i = j = 0,
+                   mini = ( options.minimum / 100 ) || 1,
+                   that = $(this),
+                      p = that.parent(),
+                 height = p.outerHeight(),
+                  width = p.outerWidth(),
+                      o = p.offset(),
+                   left = o.left,
+                    top = o.top,
+                    ret = [];
             
             if (options.reset) {
-              options.reset = false;
-              return $('*',this).removeClass(options.classhin + ' ' + options.classhout);
+                options.reset = false;
+                return $('*',this).removeClass(options.classhin + ' ' + options.classhout);
             }
  
             this.each(function() {
-                   
-                var mini = ( options.minimum / 100 ) || 1,
-                       that = $(this),
-                          p = that.parent(),
-                     height = p.outerHeight(),
-                      width = p.outerWidth(),
-                          o = p.offset(),
-                       left = o.left,
-                        top = o.top,
-                        ret = [];
                         
                 that.children().each(function() {
                     
@@ -59,13 +58,15 @@
                         c.removeClass(options.classhout).addClass(options.classhin);
                         i++;
                     }
-                    else
+                    else {
+                        j++;
                         c.removeClass(options.classhin).addClass(options.classhout);
+                    }
                 });
              
             });
             
-            return i;
+            return [i,j];
             
         }
         
