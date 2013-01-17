@@ -48,6 +48,7 @@ A jQuery plugin to add class to elements based on their position inside their pa
     );
 
 Then your CSS guy could implement them to beautify the mess created by the *awesome* animation :
+
     .insideMyParent { color: green }
     .OutsideMyParent { color: red }
     .LastShowedOfMyParent { color: blue }
