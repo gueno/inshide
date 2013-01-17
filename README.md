@@ -65,6 +65,12 @@ Then your CSS guy could implement them to beautify the mess created by the *awes
 
 ****
 
+###Demo
+
+You can find a small demo [here](http://jsfiddle.net/f7Qfk/) and play with the *minimum* option
+
+****
+
 ###TODO
 
 Add *classfirst* for the first element inside the parent
