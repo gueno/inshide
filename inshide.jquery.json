@@ -1,0 +1,27 @@
+{
+  "name": "inshide",
+  "title": "insHide",
+  "description": "A jQuery plugin to add class to elements based on their position inside their parent",
+  "keywords": [
+    "class",
+    "position"
+  ],
+  "version": "1.0.0",
+  "author": {
+    "name": "Guéno",
+    "url": "https://github.com/gueno"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "bugs": "https://github.com/gueno/insHide-jQuery-Plugin/issues",
+  "homepage": "https://github.com/gueno/insHide-jQuery-Plugin",
+  "docs": "https://github.com/gueno/insHide-jQuery-Plugin#readme",
+  "download": "https://github.com/gueno/insHide-jQuery-Plugin/archive/master.zip",
+  "dependencies": {
+    "jquery": ">=1.0"
+  }
+}
