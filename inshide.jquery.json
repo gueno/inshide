@@ -22,6 +22,6 @@
   "docs": "https://github.com/gueno/insHide-jQuery-Plugin#readme",
   "download": "https://github.com/gueno/insHide-jQuery-Plugin/archive/master.zip",
   "dependencies": {
-    "jquery": ">=1.0"
+    "jquery": ">=1.2.6"
   }
 }
