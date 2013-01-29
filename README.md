@@ -3,7 +3,7 @@ insHide jQuery Plugin
 
 A jQuery plugin to add class to elements based on their position inside their parent
 
-*Imagine a (custom) anilmated slider (or any dynamic awesome animation)*
+*Imagine a (custom) animated slider (or any dynamic awesome animation)*
 *where children elements could be half (or 30%) inside a parent (overflow: hidden)?*  
 ಠ_ಠ
 
@@ -67,7 +67,7 @@ Then your CSS guy could implement them to beautify the mess created by the *awes
 
 ###Demo
 
-You can find a small demo [here](http://jsfiddle.net/f7Qfk/) and play with the *minimum* option
+You can find a small demo [here](http://jsfiddle.net/f7Qfk/1/) and play with the *minimum* option
 
 ****
 
