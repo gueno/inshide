@@ -67,7 +67,7 @@ Then your CSS guy could implement them to beautify the mess created by the *awes
 
 ###Demo
 
-You can find a small demo [here](http://jsfiddle.net/f7Qfk/1/) and play with the *minimum* option
+You can find a small demo [here](http://jsfiddle.net/5sgyh6hy/) and play with the *minimum* option
 
 ****
 
